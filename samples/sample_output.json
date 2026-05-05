@@ -1,0 +1,19 @@
+{
+  "score": 44,
+  "breakdown": {
+    "keywords": 16.2,
+    "skills": 12.2,
+    "experience": 6.0,
+    "formatting": 10.0
+  },
+  "gap_report": {
+    "missing_keywords": ["CI/CD", "GitHub Actions", "Jenkins", "TypeScript", "Agile", "Docker", "Scrum"],
+    "missing_tools_technologies": ["CI/CD", "GitHub Actions", "Jenkins", "TypeScript"],
+    "weak_experience_areas": [],
+    "suggestions": [
+      "Add missing tools only where they are truthful. If you have used them, place them in Skills and in a relevant experience bullet.",
+      "Strengthen experience bullets by adding action, scope, tool, and measurable result for the closest matching work."
+    ],
+    "simple_explanation": "The score is low because it is missing 7 important JD terms."
+  }
+}

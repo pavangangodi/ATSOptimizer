@@ -1,0 +1,14 @@
+We are hiring an SDET / QA Automation Engineer.
+
+Required skills:
+- 3+ years experience in QA automation
+- Strong JavaScript or TypeScript
+- Playwright for UI automation
+- REST API testing
+- CI/CD experience using GitHub Actions or Jenkins
+- Regression testing and defect tracking
+
+Preferred skills:
+- Docker
+- Performance testing
+- Agile Scrum experience

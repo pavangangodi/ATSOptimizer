@@ -1,0 +1,37 @@
+SAMPLE_RESUME = """Pavan Kumar
+pavan@example.com | +91 98765 43210
+
+Summary
+QA Automation Engineer with experience building test automation for web applications and APIs.
+
+Skills
+JavaScript, Playwright, Selenium, REST API, Git, Jira, SQL, Manual Testing
+
+Experience
+QA Automation Engineer - BrightApps - 2022-Present
+- Created Playwright tests for smoke and regression coverage across checkout workflows.
+- Tested REST API endpoints and documented defects in Jira.
+- Maintained Selenium scripts for cross browser validation.
+
+Projects
+- Built a Playwright framework with reusable fixtures and HTML reports.
+
+Education
+- B.Tech in Computer Science
+"""
+
+SAMPLE_JD = """We are hiring an SDET / QA Automation Engineer.
+
+Required skills:
+- 3+ years experience in QA automation
+- Strong JavaScript or TypeScript
+- Playwright for UI automation
+- REST API testing
+- CI/CD experience using GitHub Actions or Jenkins
+- Regression testing and defect tracking
+
+Preferred skills:
+- Docker
+- Performance testing
+- Agile Scrum experience
+"""
