@@ -3,7 +3,7 @@ import BreakdownBar from './BreakdownBar.jsx';
 import Button from './Button.jsx';
 import ScoreRing from './ScoreRing.jsx';
 
-export default function ResultsPanel({ result, onDownload }) {
+export default function ResultsPanel({ result, template, generationMode, onDownload }) {
   const { breakdown, gap_report: gaps, optimized_resume: optimized } = result;
 
   return (
@@ -14,6 +14,10 @@ export default function ResultsPanel({ result, onDownload }) {
           <p className="sectionKicker">Match score</p>
           <h3>ATS readiness</h3>
           <p>{gaps.simple_explanation}</p>
+          <div className="resultMeta">
+            <span>{template.name}</span>
+            <span>{generationMode === 'browser' ? 'Browser generated' : 'API generated'}</span>
+          </div>
           <BreakdownBar label="Keyword Match" value={breakdown.keywords} type="keywords" />
           <BreakdownBar label="Skills Match" value={breakdown.skills} type="skills" />
           <BreakdownBar label="Experience Relevance" value={breakdown.experience} type="experience" />

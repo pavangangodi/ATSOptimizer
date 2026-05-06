@@ -21,6 +21,7 @@ app = FastAPI(title="ATS Resume Analyzer and Optimizer", version="1.0.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origin_regex=r"https://.*\.netlify\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -48,12 +49,16 @@ async def analyze_upload(
     resume_text: str | None = Form(None),
     resume_file: UploadFile | None = File(None),
 ) -> AnalyzeResponse:
+    text_parts: list[str] = []
     if resume_file:
-        text = await extract_text_from_upload(resume_file)
-    elif resume_text:
-        text = resume_text
-    else:
+        extracted_text = await extract_text_from_upload(resume_file)
+        if extracted_text.strip():
+            text_parts.append(extracted_text)
+    if resume_text and resume_text.strip():
+        text_parts.append(resume_text)
+    if not text_parts:
         raise HTTPException(status_code=400, detail="Upload a resume file or paste resume text.")
+    text = "\n\n".join(text_parts)
     return _analyze(text, job_description)
 
 

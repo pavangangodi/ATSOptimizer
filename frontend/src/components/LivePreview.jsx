@@ -7,19 +7,22 @@ function excerpt(value, fallback) {
   return trimmed.length > 760 ? `${trimmed.slice(0, 760)}...` : trimmed;
 }
 
-export default function LivePreview({ form, activeStep, resumeText, result, onDownload }) {
+export default function LivePreview({ form, activeStep, resumeText, result, template, generationMode, onDownload }) {
   return (
-    <aside className="previewPanel" aria-label="Live resume preview">
+    <aside className="previewPanel glassPanel revealItem" aria-label="Live resume preview">
       <div className="previewHeader">
         <div>
           <p className="sectionKicker">Live preview</p>
           <h2>{result ? 'ATS report' : 'Resume workspace'}</h2>
         </div>
-        <span className="previewStep">Step {activeStep + 1}/3</span>
+        <div className="previewBadges">
+          <span className="previewStep">{template.name}</span>
+          <span className="previewStep">Step {activeStep + 1}/3</span>
+        </div>
       </div>
 
       {result ? (
-        <ResultsPanel result={result} onDownload={onDownload} />
+        <ResultsPanel result={result} template={template} generationMode={generationMode} onDownload={onDownload} />
       ) : (
         <div className="previewStack">
           <section className="previewCard">
